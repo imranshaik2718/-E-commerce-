@@ -1,23 +1,24 @@
 // HomeCart.jsx
 import React, { useRef, useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import cart1 from "../assets/Homecartimg/1 (1).png";
-import cart2 from "../assets/Homecartimg/2.png";
-import cart3 from "../assets/Homecartimg/3.png";
-import cart4 from "../assets/Homecartimg/4.png";
-import cart5 from "../assets/Homecartimg/5.png";
-import cart6 from "../assets/Homecartimg/6.png";
-import cart7 from "../assets/Homecartimg/7.png";
-import cart8 from "../assets/Homecartimg/8.png";
-import cart9 from "../assets/Homecartimg/9.png";
-import cart10 from "../assets/Homecartimg/10.png";
+import cart1 from "../assets/MainCart/1.jpeg";
+import cart2 from "../assets/MainCart/2.jpeg";
+import cart3 from "../assets/MainCart/3.jpeg";
+import cart4 from "../assets/MainCart/4.jpeg";
+import cart5 from "../assets/MainCart/5.jpeg";
+import cart6 from "../assets/MainCart/6.jpeg";
+import cart7 from "../assets/MainCart/7.jpeg";
+import cart8 from "../assets/MainCart/8.jpeg";
+import cart9 from "../assets/MainCart/9.jpeg";
+import cart10 from "../assets/MainCart/10.jpeg";
+
 const products = [
   {
     id: 1,
     name: 'Terra.001',
     color: 'Silver Grey',
     price: '₹950',
-    image: cart9,
+    image: cart1,
     
   },
   {
@@ -25,7 +26,7 @@ const products = [
     name: 'Terra.001',
     color: 'Iron Grey',
     price: '₹1050',
-    image: cart2,
+    image: cart6,
     
   },
   {
@@ -33,7 +34,7 @@ const products = [
     name: 'Terra.001',
     color: 'Burlwood Red',
     price: '₹750',
-    image: cart3,
+    image: cart7,
     
   },
   {
@@ -57,7 +58,7 @@ const products = [
     name: 'Terra.001',
     color: 'Charcoal Black',
     price: '₹999',
-    image: cart6,
+    image: cart3,
     
   },
   {
@@ -65,7 +66,7 @@ const products = [
     name: 'Terra.001',
     color: 'Olive Green',
     price: '₹950',
-    image: cart7,
+    image: cart2,
     
   },
   {
@@ -81,7 +82,7 @@ const products = [
     name: 'Terra.001',
     color: 'Sand Beige',
     price: '₹900',
-    image: cart1,
+    image: cart9,
     
   },
   {
@@ -94,7 +95,7 @@ const products = [
   },
 ];
 
-const HomeCart = () => {
+const HomeBack = () => {
   const scrollRef = useRef(null);
  
 
@@ -114,18 +115,16 @@ const HomeCart = () => {
   
 
   return (
-    <div className="w-full relative px-6 py-10 bg-white">
+    <div className="w-full relative px-6 py-10 ">
       <div className="flex mb-6 justify-between">
+        <h1>WATER-FRIENDLY SNEAKERS</h1>
         <div>
-        <button className="bg-black text-white px-4 py-2 rounded-full">New in</button>
-        <button className="border border-black px-4 py-2 mx-5 rounded-full">Best Sellers</button>
-        </div>
-        <div>
+            
             <button className="border border-black px-4 py-2 rounded-full">View All</button>
         </div>
       </div>
 
-      <div className="relative bg-white ">
+      <div className="relative">
         <button
           onClick={() => scroll('left')}
           className="absolute z-10 left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full shadow p-2"
@@ -144,7 +143,7 @@ const HomeCart = () => {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-100 object-contain bg-white hover:scale-105 duration-500"
+                  className="w-full h-100 object-contain bg-[#f8f8fa] hover:scale-105 duration-500"
                 />
               </div>
               <div className="mt-2 text-sm">
@@ -169,4 +168,4 @@ const HomeCart = () => {
   );
 };
 
-export default HomeCart;
+export default HomeBack;
