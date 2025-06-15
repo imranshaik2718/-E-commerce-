@@ -5,7 +5,8 @@ import Hero from './Components/Hero'
 import HomeCart from './Components/HomeCart'
 import AD from './Components/AD'
 import AD2 from './Components/AD2'
-import HomeBack from './Components/HomeBack'
+import SNEAKERS from './Components/SNEAKERS'
+import BagCart from './Components/BagCart'
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
       {/* <Demo/> */}
       <HomeCart/>
       <AD/>
-      <HomeBack/>
+      <SNEAKERS/>
       <AD2/>
+      <BagCart/>
     </div>
   )
 }
