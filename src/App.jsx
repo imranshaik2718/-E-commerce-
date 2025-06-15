@@ -1,26 +1,15 @@
-import React from 'react'
-import NavBar from './Components/NavBar'
-import Hero from './Components/Hero'
-// import Demo from './Components/Demo'
-import HomeCart from './Components/HomeCart'
-import AD from './Components/AD'
-import AD2 from './Components/AD2'
-import SNEAKERS from './Components/SNEAKERS'
-import BagCart from './Components/BagCart'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './HomePage/HomePage';
 
 function App() {
   return (
-    <div>
-      <NavBar/>
-      <Hero/>
-      {/* <Demo/> */}
-      <HomeCart/>
-      <AD/>
-      <SNEAKERS/>
-      <AD2/>
-      <BagCart/>
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
