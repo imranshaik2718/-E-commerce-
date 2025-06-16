@@ -5,7 +5,11 @@ import img1 from "../assets/AllCart/FootwareHero.jpeg";
 import Nav from "../HomePage/Nav";
 import Footer from "../Components/Footer";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/cartSlice";
+ import { FaHeart } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
+import { toggleLike } from "../redux/cartSlice"; // adjust path if needed
+
 
 function Footwear() {
   const [visibleCount, setVisibleCount] = useState(12);
@@ -21,6 +25,7 @@ const dispatch = useDispatch();
   );
 
   const hasMore = visibleCount < filteredAllshoes.length;
+const likedItems = useSelector((state) => state.cart.likedItems);
 
   return (
     <>
@@ -28,7 +33,7 @@ const dispatch = useDispatch();
         <Nav />
 
         <div className="w-full h-auto relative flex justify-end items-center mt-15">
-          <img src={img1} className="shadow-lg" />
+          <img src={img1} className="shadow-2xl" />
           <div className="absolute text-3xl pr-15 text-center ">
            <div className="flex items-center"> 
 <svg version="1.0"   xmlns="http://www.w3.org/2000/svg"
@@ -178,55 +183,71 @@ Iconic Comfort.
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 px-5">
-            {filteredAllshoes.slice(0, visibleCount).map((Allshoe) => (
-              <Link
-                to={`/Allshoe/${Allshoe.id}`}
-                key={Allshoe.id}
-                className="block"
-              >
-                <div className="bg-[#f8f8fa] rounded-lg overflow-hidden">
-                  <img
-                    src={Allshoe.image}
-                    alt={Allshoe.name}
-                    className="w-full h-[360px] object-contain hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="mt-3 text-sm pl-7">
-                  <p className="font-semibold">{Allshoe.name}</p>
-                  <p className="text-gray-600 text-xs">{Allshoe.color}</p>
-                  <div className="flex gap-2 items-center">
-                    <p className="font-medium mt-1">{Allshoe.price}</p>
-                    {Allshoe.discount && (
-                      <>
-                        <p className="line-through text-gray-400 text-sm mt-1">
-                          {Allshoe.originalPrice}
-                        </p>
-                        <p className="text-red-500 text-sm font-semibold mt-1">
-                          {Allshoe.discount}% off
-                        </p>
-                      </>
-                    )}
-                  </div>
-                  <button
-      onClick={() => dispatch(addToCart(Allshoe))}
-      className="mt-2 px-4 py-1 bg-black text-white rounded-full hover:bg-gray-800 transition"
+  {filteredAllshoes.slice(0, visibleCount).map((Allshoe) => (
+    <Link
+      to={`/Allshoe/${Allshoe.id}`}
+      key={Allshoe.id}
+      className="block"
     >
-      Add to Cart
-    </button>
-                </div>
-              </Link>
-            ))}
-          </div>
+      <div className="relative bg-[#f8f8fa] rounded-lg overflow-hidden">
+        <img
+          src={Allshoe.image}
+          alt={Allshoe.name}
+          className="w-full h-[360px] object-contain hover:scale-105 transition-transform duration-500"
+        />
+        {/* Heart Icon Positioned on Top Right */}
+        <motion.button
+          onClick={(e) => {
+            e.preventDefault(); // prevent link navigation on heart click
+            dispatch(toggleLike(Allshoe.id));
+          }}
+          className="absolute top-3 right-3 text-xl z-10"
+          whileTap={{ scale: 1.3 }}
+          transition={{ type: 'spring', stiffness: 300 }}
+        >
+          <motion.div
+            animate={{
+              scale: likedItems.includes(Allshoe.id) ? 1.2 : 1,
+              color: likedItems.includes(Allshoe.id) ? '#DC2626' : '#9CA3AF',
+            }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            <FaHeart />
+          </motion.div>
+        </motion.button>
+      </div>
+      <div className="mt-3 text-sm pl-7">
+        <p className="font-semibold">{Allshoe.name}</p>
+        <p className="text-gray-600 text-xs">{Allshoe.color}</p>
+        <div className="flex gap-2 items-center">
+          <p className="font-medium mt-1">{Allshoe.price}</p>
+          {Allshoe.discount && (
+            <>
+              <p className="line-through text-gray-400 text-sm mt-1">
+                {Allshoe.originalPrice}
+              </p>
+              <p className="text-red-500 text-sm font-semibold mt-1">
+                {Allshoe.discount}% off
+              </p>
+            </>
+          )}
+        </div>
+      </div>
+    </Link>
+  ))}
+</div>
+
 
           {/* View More Button */}
           {hasMore && (
-            <div className="flex justify-center mt-10">
+            <div className="flex justify-center items-center mt-10 relative">
               <button
                 onClick={handleViewMore}
-                className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition"
+                className="px-6 py-2 my-6 bg-black text-white rounded-full hover:bg-gray-800 transition"
               >
                 View More
               </button>
+              <div className="w-[60%] absolute h-1 bottom-0 rounded-[50%] shadow shadow-black bg-black"> </div>
             </div>
           )}
         </div>

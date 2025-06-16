@@ -4,7 +4,7 @@ import bg from "../assets/Hero/bagbg.jpeg";
 function AD2() {
   return (
     <>
-    <div className="flex items-center">
+    <div className="flex items-center mt-5">
      <h1 className="text-black/60 text-3xl pl-6 pr-2 pb-4 font-extralight">Backpack </h1>
       
 <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" className="bi bi-backpack3-fill mb-5"  viewBox="0 0 16 16" id="Backpack3-Fill--Streamline-Bootstrap" height="36" width="36">

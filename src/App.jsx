@@ -6,6 +6,7 @@ import Footwear from './Cart/Footwear';
 import AllshoePage from './Components/ProductPage';
 import HomeProductPage from './Components/HomeProductPage';
 import CheckoutPage from './page/Cart';
+import Collections from './page/Collections';
 function App() {
   return (
     <Router>
@@ -16,6 +17,7 @@ function App() {
         <Route path="/Allshoe/:id" element={<AllshoePage />} />
         <Route path="/homeProduct/:id" element={<HomeProductPage />} />
          <Route path="/checkout" element={<CheckoutPage />} />
+         <Route path="/collections" element={<Collections />} />
       </Routes>
     </Router>
   );
