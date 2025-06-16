@@ -1,131 +1,32 @@
-// HomeCart.jsx
-import React, { useRef, useState, useEffect } from 'react';
+// src/components/HomeCart.jsx
+import React, { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import cart1 from "../assets/Homecartimg/1 (1).png";
-import cart2 from "../assets/Homecartimg/2.png";
-import cart3 from "../assets/Homecartimg/3.png";
-import cart4 from "../assets/Homecartimg/4.png";
-import cart5 from "../assets/Homecartimg/5.png";
-import cart6 from "../assets/Homecartimg/6.png";
-import cart7 from "../assets/Homecartimg/7.png";
-import cart8 from "../assets/Homecartimg/8.png";
-import cart9 from "../assets/Homecartimg/9.png";
-import cart10 from "../assets/Homecartimg/10.png";
-const products = [
-  {
-    id: 1,
-    name: 'Terra.001',
-    color: 'Silver Grey',
-    price: '₹950',
-    image: cart9,
-    
-  },
-  {
-    id: 2,
-    name: 'Terra.001',
-    color: 'Iron Grey',
-    price: '₹1050',
-    image: cart2,
-    
-  },
-  {
-    id: 3,
-    name: 'Terra.001',
-    color: 'Burlwood Red',
-    price: '₹750',
-    image: cart3,
-    
-  },
-  {
-    id: 4,
-    name: 'Terra.001',
-    color: 'Eucalyptus Red',
-    price: '₹1300',
-    image: cart4,
-    labels: ['Pre-order', 'New in'],
-  },
-  {
-    id: 5,
-    name: 'Terra.001',
-    color: 'Blue Navy',
-    price: '₹600',
-    image: cart5,
-    
-  },
-  {
-    id: 6,
-    name: 'Terra.001',
-    color: 'Charcoal Black',
-    price: '₹999',
-    image: cart6,
-    
-  },
-  {
-    id: 7,
-    name: 'Terra.001',
-    color: 'Olive Green',
-    price: '₹950',
-    image: cart7,
-    
-  },
-  {
-    id: 8,
-    name: 'Terra.001',
-    color: 'Sunset Orange',
-    price: '₹950',
-    image: cart8,
-    
-  },
-  {
-    id: 9,
-    name: 'Terra.001',
-    color: 'Sand Beige',
-    price: '₹900',
-    image: cart1,
-    
-  },
-  {
-    id: 10,
-    name: 'Terra.001',
-    color: 'Crimson Red',
-    price: '₹800',
-    image: cart10,
-    
-  },
-];
+import { Link } from 'react-router-dom';
+import homeProducts from '../Data/homeProducts';
 
 const HomeCart = () => {
   const scrollRef = useRef(null);
- 
 
   const scroll = (direction) => {
-    if (scrollRef.current) {
-      const container = scrollRef.current;
-      const scrollAmount = direction === 'left' ? -400 : 400;
-      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-
-      const newScrollLeft = container.scrollLeft + scrollAmount;
-      const maxScrollLeft = container.scrollWidth - container.clientWidth;
-      const percentScrolled = Math.min(Math.max(newScrollLeft / maxScrollLeft, 0), 1);
-      setScrollPercent(percentScrolled);
-    }
+    const scrollAmount = direction === 'left' ? -400 : 400;
+    scrollRef.current?.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   };
-
-  
 
   return (
     <div className="w-full relative px-6 py-10 bg-white">
       <div className="flex mb-6 justify-between">
         <div>
-        <button className="bg-black text-white px-4 py-2 rounded-full">New in</button>
-        <button className="border border-black px-4 py-2 mx-5 rounded-full">Best Sellers</button>
+          <button className="bg-black text-white px-4 py-2 rounded-full">New in</button>
+          <button className="border border-black px-4 py-2 mx-5 rounded-full">Best Sellers</button>
         </div>
         <div>
-            <button className="border border-black px-4 py-2 rounded-full">View All</button>
+          <Link to="/footwear">
+            <button className="border border-black px-4 py-2 rounded-full hover:bg-black/10">View All</button>
+          </Link>
         </div>
       </div>
 
-      <div className="relative bg-white ">
+      <div className="relative bg-white">
         <button
           onClick={() => scroll('left')}
           className="absolute z-10 left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full shadow p-2"
@@ -135,12 +36,15 @@ const HomeCart = () => {
 
         <div
           ref={scrollRef}
-          className="flex overflow-x-auto scroll-smooth space-x-6 pb-2   no-scrollbar"
+          className="flex overflow-x-auto scroll-smooth space-x-6 pb-2 no-scrollbar"
         >
-          {products.map((product) => (
-            <div key={product.id} className="min-w-[450px] max-w-[450px]">
+          {homeProducts.map((product) => (
+            <Link
+              to={`/homeProduct/${product.id}`}
+              key={product.id}
+              className="min-w-[450px] max-w-[450px] block"
+            >
               <div className="relative bg-gray-100 rounded-lg overflow-hidden">
-                
                 <img
                   src={product.image}
                   alt={product.name}
@@ -152,12 +56,10 @@ const HomeCart = () => {
                 <p className="text-gray-600">{product.color}</p>
                 <p className="font-medium mt-1">{product.price}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
-        
-       
         <button
           onClick={() => scroll('right')}
           className="absolute z-10 right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full shadow p-2"

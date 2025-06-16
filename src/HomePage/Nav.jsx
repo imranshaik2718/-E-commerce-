@@ -66,9 +66,9 @@ fill="black" stroke="black">
 
         {/* Navigation Links */}
         <ul className="hidden md:flex space-x-8 text-gray-900 font-medium ">
+          <li><Link to="/" className="hover:opacity-75">Home</Link></li>
           <li><Link to="/footwear" className="hover:opacity-75">Footwear</Link></li>
           <li><Link to="/backpacks" className="hover:opacity-75">Backpacks</Link></li>
-          <li><Link to="/apparel" className="hover:opacity-75">Apparel</Link></li>
           <li><Link to="/accessories" className="hover:opacity-75">Accessories</Link></li>
           <li><Link to="/collections" className="hover:opacity-75">Collections</Link></li>
         </ul>

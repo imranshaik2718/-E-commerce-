@@ -23,6 +23,17 @@ import cart22 from "../assets/MainCart/22.jpeg";
 import cart23 from "../assets/MainCart/23.jpeg";
 import cart24 from "../assets/MainCart/24.jpeg";
 
+import cart25 from "../assets/Homecartimg/1 (1).png";
+import cart26 from "../assets/Homecartimg/2.png";
+import cart27 from "../assets/Homecartimg/3.png";
+import cart28 from "../assets/Homecartimg/4.png";
+import cart29 from "../assets/Homecartimg/5.png";
+import cart30 from "../assets/Homecartimg/6.png";
+import cart31 from "../assets/Homecartimg/7.png";
+import cart32 from "../assets/Homecartimg/8.png";
+import cart33 from "../assets/Homecartimg/9.png";
+import cart34 from "../assets/Homecartimg/10.png";
+
 
 // img1
 import cart1A from "../assets/Sideimage/1A.jpeg";
@@ -145,7 +156,56 @@ import cart25A from "../assets/Sideimage/25A.jpeg";
 import cart25B from "../assets/Sideimage/25B.jpeg";
 import cart25C from "../assets/Sideimage/25C.jpeg";
 import cart25D from "../assets/Sideimage/25D.jpeg";
-
+ // added 
+ import cart1AA from "../assets/Sideimage2/1AA.png";
+import cart1BB from "../assets/Sideimage2/1BB.png";
+import cart1CC from "../assets/Sideimage2/1CC.png";
+import cart1DD from "../assets/Sideimage2/1DD.png";
+// img2
+import cart2AA from "../assets/Sideimage2/2AA.png";
+import cart2BB from "../assets/Sideimage2/2BB.png";
+import cart2CC from "../assets/Sideimage2/2CC.png";
+import cart2DD from "../assets/Sideimage2/2DD.png";
+// img3
+import cart3AA from "../assets/Sideimage2/3AA.png";
+import cart3BB from "../assets/Sideimage2/3BB.png";
+import cart3CC from "../assets/Sideimage2/3CC.png";
+import cart3DD from "../assets/Sideimage2/3DD.png";
+// img4
+import cart4AA from "../assets/Sideimage2/4AA.png";
+import cart4BB from "../assets/Sideimage2/4BB.png";
+import cart4CC from "../assets/Sideimage2/4CC.png";
+import cart4DD from "../assets/Sideimage2/4DD.png";
+// img5
+import cart5AA from "../assets/Sideimage2/5AA.png";
+import cart5BB from "../assets/Sideimage2/5BB.png";
+import cart5CC from "../assets/Sideimage2/5CC.png";
+import cart5DD from "../assets/Sideimage2/5DD.png";
+// img6
+import cart6AA from "../assets/Sideimage2/6AA.png";
+import cart6BB from "../assets/Sideimage2/6BB.png";
+import cart6CC from "../assets/Sideimage2/6CC.png";
+import cart6DD from "../assets/Sideimage2/6DD.png";
+// img7
+// import cart7AA from "../assets/Sideimage2/7AA.png";
+// import cart7BB from "../assets/Sideimage2/7BB.png";
+// import cart7CC from "../assets/Sideimage2/7CC.jpeg";
+// import cart7DD from "../assets/Sideimage2/7DD.png";
+// img8
+import cart8AA from "../assets/Sideimage2/8AA.png";
+import cart8BB from "../assets/Sideimage2/8BB.png";
+import cart8CC from "../assets/Sideimage2/8CC.png";
+import cart8DD from "../assets/Sideimage2/8DD.png";
+// img9
+import cart9AA from "../assets/Sideimage2/9AA.png";
+import cart9BB from "../assets/Sideimage2/9BB.png";
+import cart9CC from "../assets/Sideimage2/9CC.png";
+import cart9DD from "../assets/Sideimage2/9DD.png";
+// img10
+import cart10AA from "../assets/Sideimage2/10AA.png";
+import cart10BB from "../assets/Sideimage2/10BB.png";
+import cart10CC from "../assets/Sideimage2/10CC.png";
+import cart10DD from "../assets/Sideimage2/10DD.png";
 
 
 
@@ -174,6 +234,16 @@ const Allshoes = [
 { id: 22, name: 'Terra.001',tag: "Adventure Travel Sneakers", color: 'Crimson Red', price: '₹2000', image: cart22 ,thumbnails: [cart23A, cart23B, cart23C , cart23D]},
 { id: 23, name: 'Terra.001',tag: "Adventure Travel Sneakers", color: 'Crimson Red', price: '₹2000', image: cart23 ,thumbnails: [cart24A, cart24B, cart24C , cart24D]},
 { id: 24, name: 'Terra.001',tag: "Adventure Travel Sneakers", color: 'Crimson Red', price: '₹2000', image: cart24 ,thumbnails: [cart25A, cart25B, cart25C , cart25D]},
+{ id: 25, name: 'Terra.001',tag: "Lifestyle Sneakers", color: 'Crimson Red', price: '₹2000', image: cart25 ,thumbnails: [cart1AA, cart1BB, cart1CC , cart1DD]},
+{ id: 26, name: 'Terra.001',tag: "Adventure Travel Sneakers", color: 'Crimson Red', price: '₹2000', image: cart26 ,thumbnails: [cart2AA, cart2BB, cart2CC , cart2DD]},
+{ id: 27, name: 'Terra.001',tag: "Lifestyle Sneakers", color: 'Crimson Red', price: '₹2000', image: cart27 ,thumbnails: [cart3AA, cart3BB, cart3CC , cart3DD]},
+{ id: 28, name: 'Terra.001',tag: "Adventure Travel Sneakers", color: 'Crimson Red', price: '₹2000', image: cart28 ,thumbnails: [cart4AA, cart4BB, cart4CC , cart4DD]},
+{ id: 29, name: 'Terra.001',tag: "Lifestyle Sneakers", color: 'Crimson Red', price: '₹2000', image: cart29 ,thumbnails: [cart5AA, cart5BB, cart5CC , cart5DD]},
+{ id: 30, name: 'Terra.001',tag: "Water proof", color: 'Crimson Red', price: '₹2000', image: cart30 ,thumbnails: [cart6AA, cart6BB, cart6CC , cart6DD]},
+// { id: 31, name: 'Terra.001',tag: "Adventure Travel Sneakers", color: 'Crimson Red', price: '₹2000', image: cart31 ,thumbnails: [cart7AA, cart7BB, cart7CC , cart7DD]},
+{ id: 32, name: 'Terra.001',tag: "Lifestyle Sneakers", color: 'Crimson Red', price: '₹2000', image: cart32 ,thumbnails: [cart8AA, cart8BB, cart8CC , cart8DD] },
+{ id: 33, name: 'Terra.001',tag: "Water proof", color: 'Crimson Red', price: '₹2000', image: cart33 ,thumbnails: [cart9AA, cart9BB, cart9CC , cart9DD]},
+{ id: 34, name: 'Terra.001',tag: "Adventure Travel Sneakers", color: 'Crimson Red', price: '₹2000', image: cart34 ,thumbnails: [cart10AA, cart10BB, cart10CC , cart10DD]},
 
 ];
 

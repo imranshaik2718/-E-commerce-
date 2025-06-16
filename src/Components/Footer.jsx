@@ -1,9 +1,10 @@
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaYoutube, FaTiktok } from 'react-icons/fa';
-
+import vid1 from "../assets/AllCart/MainCart.mp4";
 const Footer = () => {
   return (
     <>
+    
     <div className="bg-[#f9f9f5] text-black flex flex-col md:flex-row justify-around items-center py-10 text-center">
         <div className="mb-6 md:mb-0">
           <img src="https://img.icons8.com/ios/50/shipped.png" alt="shipping" className="mx-auto mb-2" />
@@ -16,6 +17,9 @@ const Footer = () => {
           <p className="text-sm">30-day returns & free exchanges.</p>
         </div>
       </div>
+      <div>
+      <video src={vid1} className='-mb-[0.1px]' loop autoPlay></video>
+    </div>
     <footer className="bg-[#1a1a1a] text-white px-6 md:px-20 pt-16 pb-10">
 
       <div className="grid md:grid-cols-4 gap-10 mt-12">
