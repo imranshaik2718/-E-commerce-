@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -77,31 +78,31 @@ fill="white" stroke="black" className={` ${isScrolled ? 'fill-black' : 'fill-whi
 
         {/* Navigation Links */}
         <ul className={`hidden md:flex space-x-8 text-gray-900 font-medium ${isScrolled ? 'text-black' : 'text-white'}`}>
-          <li><a href="/footwear" className="hover:opacity-75">Footwear</a></li>
-          <li><a href="/backpacks" className="hover:opacity-75">Backpacks</a></li>
-          <li><a href="/apparel" className="hover:opacity-75">Apparel</a></li>
-          <li><a href="/accessories" className="hover:opacity-75">Accessories</a></li>
-          <li><a href="/collections" className="hover:opacity-75">Collections</a></li>
+          <li><Link to="/footwear" className="hover:opacity-75">Footwear</Link></li>
+          <li><Link to="/backpacks" className="hover:opacity-75">Backpacks</Link></li>
+          <li><Link to="/apparel" className="hover:opacity-75">Apparel</Link></li>
+          <li><Link to="/accessories" className="hover:opacity-75">Accessories</Link></li>
+          <li><Link to="/collections" className="hover:opacity-75">Collections</Link></li>
         </ul>
 
         {/* Icons */}
         <div className="flex space-x-4">
-          <a href="/search" className="hover:opacity-75"><svg xmlns="http://www.w3.org/2000/svg" className={` ${isScrolled ? 'stroke-black' : 'stroke-white'}`} viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" id="Search--Streamline-Tabler" height="24" width="24">
+          <Link to="/search" className="hover:opacity-75"><svg xmlns="http://www.w3.org/2000/svg" className={` ${isScrolled ? 'stroke-black' : 'stroke-white'}`} viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" id="Search--Streamline-Tabler" height="24" width="24">
 
   <path d="M3 10a7 7 0 1 0 14 0 7 7 0 1 0 -14 0" stroke-width="2"></path>
   <path d="m21 21 -6 -6" stroke-width="2"></path>
-</svg></a>
-          <a href="/cart" className="hover:opacity-75"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" className={` ${isScrolled ? 'stroke-black' : 'stroke-white'}`} stroke="#000000" stroke-linecap="round" stroke-linejoin="round" id="Shopping-Bag-Edit--Streamline-Tabler" height="24" width="24">
+</svg></Link>
+          <Link to="/cart" className="hover:opacity-75"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" className={` ${isScrolled ? 'stroke-black' : 'stroke-white'}`} stroke="#000000" stroke-linecap="round" stroke-linejoin="round" id="Shopping-Bag-Edit--Streamline-Tabler" height="24" width="24">
  
   <path d="M11 21H8.574a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152A2 2 0 0 1 6.331 8H17.67a2 2 0 0 1 1.977 2.304l-0.109 0.707" stroke-width="2"></path>
   <path d="M9 11V6a3 3 0 0 1 6 0v5" stroke-width="2"></path>
   <path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97L18 22h-3v-3l3.42 -3.39z" stroke-width="2"></path>
-</svg></a>
-          <a href="/account" className="hover:opacity-75"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" className={` ${isScrolled ? 'stroke-black' : 'stroke-white'}`} stroke="#000000" stroke-linecap="round" stroke-linejoin="round" id="User--Streamline-Tabler" height="24" width="24">
+</svg></Link>
+          <Link to="/account" className="hover:opacity-75"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" className={` ${isScrolled ? 'stroke-black' : 'stroke-white'}`} stroke="#000000" stroke-linecap="round" stroke-linejoin="round" id="User--Streamline-Tabler" height="24" width="24">
   
   <path d="M8 7a4 4 0 1 0 8 0 4 4 0 0 0 -8 0" stroke-width="2"></path>
   <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" stroke-width="2"></path>
-</svg></a>
+</svg></Link>
           <button className="md:hidden">Menu</button>
         </div>
       </div>

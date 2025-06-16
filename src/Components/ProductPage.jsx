@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Star } from 'lucide-react';
-import products from '../data/products';
+import Allshoes from "../Data/AllShoes";
 import Nav from '../HomePage/Nav';
 
 const sizes = [36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47];
@@ -9,25 +9,25 @@ const colors = [
   '#fef9c3', '#f5f5f4', '#d4d4d8', '#0f172a', '#a7f3d0', '#fef9c3', '#fda4af'
 ];
 
-const ProductPage = () => {
+const AllshoePage = () => {
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
   const { id } = useParams();
-  const product = products.find((p) => p.id === parseInt(id));
+  const Allshoe = Allshoes.find((p) => p.id === parseInt(id));
 
-  if (!product) return <p className="p-10 text-red-500">Product not found.</p>;
+  if (!Allshoe) return <p className="p-10 text-red-500">Allshoe not found.</p>;
 
-  const productImages = product?.thumbnails || [];
-  const mainImage = selectedImage || product.image;
+  const AllshoeImages = Allshoe?.thumbnails || [];
+  const mainImage = selectedImage || Allshoe.image;
 
   return (
     <div>
       <Nav />
-      <div className="flex flex-col md:flex-row gap-8 p-6 mt-20">
+      <div className="flex flex-col md:flex-row gap-8 p-6 mt-14">
         {/* Left Thumbnails */}
         <div className="flex flex-col gap-2 items-center">
           <div className="flex flex-col gap-2">
-            {productImages.map((img, i) => (
+            {AllshoeImages.map((img, i) => (
               <img
                 key={i}
                 src={img}
@@ -41,21 +41,21 @@ const ProductPage = () => {
           </div>
         </div>
 
-        {/* Main Product Image */}
+        {/* Main Allshoe Image */}
         <div className="flex-1 flex justify-center items-center">
           <img
             src={mainImage}
-            alt={product.name}
+            alt={Allshoe.name}
             className="max-w-md w-full object-contain"
           />
         </div>
 
-        {/* Product Details */}
+        {/* Allshoe Details */}
         <div className="flex-1">
           
-          <h1 className="text-3xl font-semibold">{product.name}</h1>
-          <p className="text-base text-gray-600 mb-1">{product.color}</p>
-          <p className="text-lg font-medium mt-1">{product.price}</p>
+          <h1 className="text-3xl font-semibold">{Allshoe.name}</h1>
+          <p className="text-base text-gray-600 mb-1">{Allshoe.color}</p>
+          <p className="text-lg font-medium mt-1">{Allshoe.price}</p>
           <p className="text-sm text-gray-500">
             Or <span className="text-black font-semibold">₹650.0</span> if you <a href="#" className="underline">sign up for our newsletter</a>.
           </p>
@@ -140,4 +140,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default AllshoePage;

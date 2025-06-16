@@ -15,7 +15,7 @@ const SNEAKERS = () => {
     <div className="w-full relative px-6 py-10">
       <div className="flex mb-6 justify-between">
         <h1 className='hover:underline'>WATER-FRIENDLY SNEAKERS</h1>
-        <button className="border border-black px-4 py-2 rounded-full hover:bg-black/20">View All</button>
+        <Link to="/footwear"><button className="border border-black px-4 py-2 rounded-full hover:bg-black/20">View All</button></Link>
       </div>
 
       <div className="relative">

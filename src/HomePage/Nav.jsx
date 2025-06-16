@@ -5,9 +5,9 @@ function Nav() {
   return (
     <div>
       <nav
-      className="fixed top-0 left-0 w-full z-50 transition-all  duration-300 ease-in-out "
+      className="fixed top-0 bg-white left-0 w-full z-50 transition-all  duration-300 ease-in-out "
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 ">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16  ">
         {/* Logo */}
         <div className="flex items-center">
           <svg version="1.0"   xmlns="http://www.w3.org/2000/svg"

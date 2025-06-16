@@ -5,7 +5,7 @@ import img3 from "../assets/Hero/backpack3.png";
 function AD2() {
   return (
     <div>
-      <h3 className=" text-black  text-center md:text-4xl font-extralight hover:underline mt-5">
+      <h3 className=" text-black  text-center md:text-4xl font-extralight hover:underline mt-5 -mb-3">
                 Backpacks
               </h3>
       <div className="container flex justify-between  items-center md:items-start self-start md:self-center text-center md:text-left md:p-3 font-sans"></div>

@@ -61,17 +61,17 @@ import cart10D from "../assets/Sideimage/10D.jpeg";
 
 
 const products = [
-  { id: 1, name: 'Terra.001', color: 'Silver Grey', price: '₹950', image: cart1 ,thumbnails: [cart1A, cart1B, cart1C , cart1D]},
-  { id: 2, name: 'Terra.001', color: 'Iron Grey', price: '₹1050', image: cart6 ,thumbnails: [cart2A, cart2B, cart2C , cart2D] },
-  { id: 3, name: 'Terra.001', color: 'Burlwood Red', price: '₹750', image: cart7 ,thumbnails: [cart3A, cart3B, cart3C , cart3D]},
-  { id: 4, name: 'Terra.001', color: 'Eucalyptus Red', price: '₹1300', image: cart4,thumbnails: [cart4A, cart4B, cart4C , cart4D] },
-  { id: 5, name: 'Terra.001', color: 'Blue Navy', price: '₹600', image: cart5 ,thumbnails: [cart5A, cart5B, cart5C , cart5D]},
-  { id: 6, name: 'Terra.001', color: 'Charcoal Black', price: '₹999', image: cart3 ,thumbnails: [cart6A, cart6B, cart6C , cart6D]},
-  { id: 7, name: 'Terra.001', color: 'Olive Green', price: '₹950', image: cart2 ,thumbnails: [cart7A, cart7B, cart7C , cart7D]},
-  { id: 8, name: 'Terra.001', color: 'Sunset Orange', price: '₹950', image: cart8 ,thumbnails: [cart8A, cart8B, cart8C , cart8D]},
-  { id: 9, name: 'Terra.001', color: 'Sand Beige', price: '₹900', image: cart9 ,thumbnails: [cart9A, cart9B, cart9C , cart9D]},
-  { id: 10, name: 'Terra.001', color: 'Crimson Red', price: '₹800', image: cart10 ,thumbnails: [cart10A, cart10B, cart10C , cart10D]},
-  
+  { id: 1, name: 'Terra.001',tag: "water", color: 'Silver Grey', price: '₹2200', image: cart1 ,thumbnails: [cart1A, cart1B, cart1C , cart1D]},
+  { id: 2, name: 'Terra.001',tag: "water", color: 'red-wood', price: '₹2000', image: cart6 ,thumbnails: [cart2A, cart2B, cart2C , cart2D] },
+  { id: 3, name: 'Terra.001',tag: "water", color: 'Baltic Navy', price: '₹2000', image: cart7 ,thumbnails: [cart3A, cart3B, cart3C , cart3D]},
+  { id: 4, name: 'Terra.001',tag: "water", color: 'breeze-lemon-yellow', price: '₹1800', image: cart4,thumbnails: [cart4A, cart4B, cart4C , cart4D] },
+  { id: 5, name: 'Terra.001',tag: "water", color: 'breeze-mist-green', price: '₹1800', image: cart5 ,thumbnails: [cart5A, cart5B, cart5C , cart5D]},
+  { id: 6, name: 'Terra.001',tag: "water", color: 'breeze-onyx-white', price: '₹1999', image: cart3 ,thumbnails: [cart6A, cart6B, cart6C , cart6D]},
+  { id: 7, name: 'Terra.001',tag: "water", color: 'Olive white', price: '₹1500', image: cart2 ,thumbnails: [cart7A, cart7B, cart7C , cart7D]},
+  { id: 8, name: 'Terra.001',tag: "water", color: 'Sunset blue', price: '₹1750', image: cart8 ,thumbnails: [cart8A, cart8B, cart8C , cart8D]},
+  { id: 9, name: 'Terra.001',tag: "water", color: 'Sand Beige', price: '₹1500', image: cart9 ,thumbnails: [cart9A, cart9B, cart9C , cart9D]},
+  { id: 10, name: 'Terra.001',tag: "water", color: 'Crimson Red', price: '₹1600', image: cart10 ,thumbnails: [cart10A, cart10B, cart10C , cart10D]},
+
 ];
 
 export default products;
