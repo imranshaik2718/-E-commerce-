@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import homeProducts from '../Data/homeProducts';
 import Nav from '../HomePage/Nav';
-
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { addToCart } from '../redux/cartSlice';
 const sizes = [36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47];
 const colors = [
   '#fef9c3', '#f5f5f4', '#d4d4d8', '#0f172a', '#a7f3d0', '#fef9c3', '#fda4af'
@@ -10,13 +12,33 @@ const colors = [
 const HomeProductPage = () => {
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
+  
+
   const { id } = useParams();
   const product = homeProducts.find((p) => p.id === parseInt(id));
 
   if (!product) {
     return <p className="p-10 text-red-500">Product not found.</p>;
   }
+ const dispatch = useDispatch();
+const navigate = useNavigate();
 
+const mainImage = selectedImage || product.image;
+
+const handleAddToCart = () => {
+  if (!selectedSize) return;
+
+  const productToAdd = {
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    image: mainImage,
+    size: selectedSize,
+  };
+
+  dispatch(addToCart(productToAdd));
+  navigate('/checkout');
+};
   return (
     <div>
       <Nav />
@@ -90,15 +112,16 @@ const HomeProductPage = () => {
 
           {/* Add to Cart Button */}
           <button
-            className={`mt-6 w-full py-3 rounded-full text-lg font-medium transition ${
-              selectedSize
-                ? 'bg-black text-white hover:bg-gray-800'
-                : 'bg-gray-600 text-white cursor-not-allowed'
-            }`}
-            disabled={!selectedSize}
-          >
-            {selectedSize ? 'Add to Cart' : 'Select a size'}
-          </button>
+  onClick={handleAddToCart}
+  className={`mt-6 w-full py-3 rounded-full text-lg font-medium transition ${
+    selectedSize
+      ? 'bg-black text-white hover:bg-gray-800'
+      : 'bg-gray-600 text-white cursor-not-allowed'
+  }`}
+  disabled={!selectedSize}
+>
+  {selectedSize ? 'Add to Cart' : 'Select your size'}
+</button>
 
           {/* Delivery Info */}
           <div className="mt-4 text-sm text-gray-600">

@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import { Star } from 'lucide-react';
 import Allshoes from "../Data/AllShoes";
 import Nav from '../HomePage/Nav';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { addToCart } from '../redux/cartSlice';
 
 const sizes = [36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47];
 const colors = [
@@ -19,6 +22,24 @@ const AllshoePage = () => {
 
   const AllshoeImages = Allshoe?.thumbnails || [];
   const mainImage = selectedImage || Allshoe.image;
+  const dispatch = useDispatch();
+const navigate = useNavigate();
+
+const handleAddToCart = () => {
+  if (!selectedSize) return;
+
+  const productToAdd = {
+    id: Allshoe.id,
+    name: Allshoe.name,
+    price: Allshoe.price,
+    image: mainImage,
+    size: selectedSize,
+  };
+
+  dispatch(addToCart(productToAdd));
+  navigate('/checkout');
+};
+
 
   return (
     <div>
@@ -115,8 +136,8 @@ const AllshoePage = () => {
           </div>
 
           {/* Select size button */}
-          <a href="">
-          <button
+         <button
+  onClick={handleAddToCart}
   className={`mt-6 w-full py-3 rounded-full text-lg font-medium transition ${
     selectedSize
       ? 'bg-black text-white hover:bg-gray-800'
@@ -125,7 +146,9 @@ const AllshoePage = () => {
   disabled={!selectedSize}
 >
   {selectedSize ? 'Add to Cart' : 'Select your size'}
-</button></a>
+</button>
+
+
 
           {/* Shipping info */}
           <div className="mt-4 text-sm text-gray-600">

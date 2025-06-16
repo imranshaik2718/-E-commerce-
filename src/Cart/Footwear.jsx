@@ -4,6 +4,8 @@ import Allshoes from "../Data/AllShoes";
 import img1 from "../assets/AllCart/FootwareHero.jpeg";
 import Nav from "../HomePage/Nav";
 import Footer from "../Components/Footer";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cartSlice";
 
 function Footwear() {
   const [visibleCount, setVisibleCount] = useState(12);
@@ -12,6 +14,7 @@ function Footwear() {
   const handleViewMore = () => {
     setVisibleCount((prev) => prev + 8);
   };
+const dispatch = useDispatch();
 
   const filteredAllshoes = Allshoes.filter(
     (Allshoe) => selectedTag === "all" || Allshoe.tag === selectedTag
@@ -204,6 +207,12 @@ Iconic Comfort.
                       </>
                     )}
                   </div>
+                  <button
+      onClick={() => dispatch(addToCart(Allshoe))}
+      className="mt-2 px-4 py-1 bg-black text-white rounded-full hover:bg-gray-800 transition"
+    >
+      Add to Cart
+    </button>
                 </div>
               </Link>
             ))}

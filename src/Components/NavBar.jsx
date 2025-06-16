@@ -92,7 +92,7 @@ fill="white" stroke="black" className={` ${isScrolled ? 'fill-black' : 'fill-whi
   <path d="M3 10a7 7 0 1 0 14 0 7 7 0 1 0 -14 0" stroke-width="2"></path>
   <path d="m21 21 -6 -6" stroke-width="2"></path>
 </svg></Link>
-          <Link to="/cart" className="hover:opacity-75"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" className={` ${isScrolled ? 'stroke-black' : 'stroke-white'}`} stroke="#000000" stroke-linecap="round" stroke-linejoin="round" id="Shopping-Bag-Edit--Streamline-Tabler" height="24" width="24">
+          <Link to="/checkout" className="hover:opacity-75"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" className={` ${isScrolled ? 'stroke-black' : 'stroke-white'}`} stroke="#000000" stroke-linecap="round" stroke-linejoin="round" id="Shopping-Bag-Edit--Streamline-Tabler" height="24" width="24">
  
   <path d="M11 21H8.574a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152A2 2 0 0 1 6.331 8H17.67a2 2 0 0 1 1.977 2.304l-0.109 0.707" stroke-width="2"></path>
   <path d="M9 11V6a3 3 0 0 1 6 0v5" stroke-width="2"></path>
