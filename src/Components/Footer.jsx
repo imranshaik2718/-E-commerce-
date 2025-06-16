@@ -18,7 +18,7 @@ const Footer = () => {
         </div>
       </div>
       <div>
-      <video src={vid1} className='-mb-[0.1px]' loop autoPlay></video>
+      <video src={vid1} className='-mb-[1px]' loop autoPlay></video>
     </div>
     <footer className="bg-[#1a1a1a] text-white px-6 md:px-20 pt-16 pb-10">
 
