@@ -13,15 +13,15 @@ import cart10 from "../assets/BagCart/10.jpeg";
 import cart11 from "../assets/BagCart/11.jpeg";
 import cart12 from "../assets/BagCart/12.jpeg";
 import cart13 from "../assets/BagCart/13.jpeg";
-import cart14 from "../assets/BagCart/13.jpeg";
-import cart15 from "../assets/BagCart/13.jpeg";
-import cart16 from "../assets/BagCart/13.jpeg";
-import cart17 from "../assets/BagCart/13.jpeg";
-import cart18 from "../assets/BagCart/13.jpeg";
-import cart19 from "../assets/BagCart/13.jpeg";
-import cart20 from "../assets/BagCart/13.jpeg";
-import cart21 from "../assets/BagCart/13.jpeg";
-import cart22 from "../assets/BagCart/13.jpeg";
+import cart14 from "../assets/BagCart/14.jpeg";
+import cart15 from "../assets/BagCart/15.jpeg";
+import cart16 from "../assets/BagCart/16.jpeg";
+import cart17 from "../assets/BagCart/17.jpeg";
+import cart18 from "../assets/BagCart/18.jpeg";
+import cart19 from "../assets/BagCart/19.jpeg";
+import cart20 from "../assets/BagCart/20.jpeg";
+import cart21 from "../assets/BagCart/21.jpeg";
+import cart22 from "../assets/BagCart/22.jpeg";
 const Allbags = [
     { id: 1, name: 'Silver Explorer', color: 'Silver Grey', price: '₹950', image: cart1 },
   { id: 2, name: 'Iron Nomad', color: 'Iron Grey', price: '₹1050', image: cart6 },
