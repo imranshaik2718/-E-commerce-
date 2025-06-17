@@ -22,7 +22,7 @@ function Collections() {
   return (
     <>
       <Nav />
-      <div className="px-6 pt-20">
+      <div className="px-6 py-20">
         <div className="flex items-center gap-3">
           <h1 className="text-4xl font-bold">Collections</h1>
           <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" className="bi bi-collection" viewBox="0 0 16 16" height="16" width="16">

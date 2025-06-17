@@ -143,10 +143,10 @@ const BagCart = () => {
   return (
     <div className="w-full relative px-6 py-10 ">
       <div className="flex mb-6 justify-between">
-        <h1 className='hover:underline '>A New Era of Packing</h1>
+        <h1 className='hover:underline  '>A New Era of Packing</h1>
         <div>
             
-            <button className="border border-black px-4 py-2 rounded-full hover:bg-black/20">View All</button>
+            <button className="border border-black px-4 py-2 rounded-full hover:bg-black/20 shadow-xs shadow-black">View All</button>
         </div>
       </div>
 

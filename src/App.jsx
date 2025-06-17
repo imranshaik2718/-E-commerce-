@@ -7,6 +7,7 @@ import AllshoePage from './Components/ProductPage';
 import HomeProductPage from './Components/HomeProductPage';
 import CheckoutPage from './page/Cart';
 import Collections from './page/Collections';
+
 function App() {
   return (
     <Router>

@@ -182,7 +182,7 @@ Iconic Comfort.
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 px-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 px-5 mt-8">
   {filteredAllshoes.slice(0, visibleCount).map((Allshoe) => (
     <Link
       to={`/Allshoe/${Allshoe.id}`}
@@ -216,7 +216,7 @@ Iconic Comfort.
           </motion.div>
         </motion.button>
       </div>
-      <div className="mt-3 text-sm pl-7">
+      <div className="mt-3 text-sm pl-7 ">
         <p className="font-semibold">{Allshoe.name}</p>
         <p className="text-gray-600 text-xs">{Allshoe.color}</p>
         <div className="flex gap-2 items-center">

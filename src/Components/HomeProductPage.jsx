@@ -6,9 +6,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addToCart } from '../redux/cartSlice';
 const sizes = [36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47];
-const colors = [
-  '#fef9c3', '#f5f5f4', '#d4d4d8', '#0f172a', '#a7f3d0', '#fef9c3', '#fda4af'
-];
+ 
 const HomeProductPage = () => {
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -42,7 +40,7 @@ const handleAddToCart = () => {
   return (
     <div>
       <Nav />
-      <div className="flex flex-col md:flex-row gap-8 p-6 mt-18 px-20">
+      <div className="flex flex-col md:flex-row gap-8 p-6 mt-28 px-20">
         {/* Thumbnails */}
         <div className="flex flex-col gap-2  items-center">
           <div className="flex flex-col gap-2">
@@ -77,18 +75,7 @@ const handleAddToCart = () => {
           <p className="text-sm text-gray-500">
             Get it for <span className="text-black font-semibold">₹650</span> if you <a href="#" className="underline">sign up</a>
           </p>
-         <div className="mt-4">
-            <p className="text-sm text-gray-700">Color Options</p>
-            <div className="flex items-center gap-2 mt-2 overflow-x-auto">
-              {colors.map((color, i) => (
-                <div
-                  key={i}
-                  className="w-10 h-10 rounded-full border border-gray-300"
-                  style={{ backgroundColor: color }}
-                ></div>
-              ))}
-            </div>
-          </div>
+          
           {/* Size Selector */}
           <div className="mt-6">
             <div className="flex justify-between items-center">

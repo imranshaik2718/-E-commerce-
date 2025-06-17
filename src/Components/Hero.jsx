@@ -3,7 +3,7 @@ import vid2 from "../assets/Hero/vid2.mp4";
 import vid1 from "../assets/Hero/vid1.mp4";
 
 function Hero() {
-  const [currentVideo, setCurrentVideo] = useState(vid1); // Start with vid2
+  const [currentVideo, setCurrentVideo] = useState(vid1);  
   const videoRef = useRef(null);
 
   const handleEnded = () => {
@@ -14,7 +14,7 @@ function Hero() {
     <div className="mx-auto h-screen overflow-hidden ">
       <video
         ref={videoRef}
-        key={currentVideo} // ensures video reloads on source change
+        key={currentVideo}  
         className="w-full border-b-2 shadow-lg"
         autoPlay
         muted

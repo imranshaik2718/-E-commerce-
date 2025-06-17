@@ -1,25 +1,44 @@
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaYoutube, FaTiktok } from 'react-icons/fa';
 import vid1 from "../assets/AllCart/MainCart.mp4";
+import { motion } from 'framer-motion';
+import { FaLock} from 'react-icons/fa';
+ 
 const Footer = () => {
   return (
     <>
-    
-    <div className="bg-[#f9f9f5] text-black flex flex-col md:flex-row justify-around items-center py-10 text-center">
-        <div className="mb-6 md:mb-0">
-          <img src="https://img.icons8.com/ios/50/shipped.png" alt="shipping" className="mx-auto mb-2" />
-          <p className="font-semibold">Fast and free shipping</p>
-          <p className="text-sm">Free shipping for orders over €99.</p>
-        </div>
-        <div>
-          <img src="https://img.icons8.com/ios/50/return.png" alt="returns" className="mx-auto mb-2" />
-          <p className="font-semibold">Easy returns & exchanges</p>
-          <p className="text-sm">30-day returns & free exchanges.</p>
-        </div>
-      </div>
-      <div>
+    <div className='bg-[#1a1a1a]'>
       <video src={vid1} className='-mb-[1px]' loop autoPlay></video>
     </div>
+    <div className="bg-[#1a1a1a] border-b border-white/25 flex flex-col md:flex-row justify-around items-center py-10 text-center">
+        <div className="mb-6 md:mb-0 text-white">
+  <img
+    src="https://img.icons8.com/ios-filled/50/ffffff/shipped.png"
+    alt="shipping"
+    className="mx-auto mb-2"
+  />
+  <p className="font-semibold">Fast and free shipping</p>
+  <p className="text-sm">Free shipping for orders over $99.</p>
+</div>
+<motion.div
+            whileHover={{ scale: 1.1 }}
+            className="flex flex-col items-center text-white"
+          >
+            <FaLock className="text-2xl mb-2" />
+            <p className="font-medium">Secure Payment</p>
+          </motion.div>
+<div className="text-white">
+  <img
+    src="https://img.icons8.com/ios-filled/50/ffffff/return.png"
+    alt="returns"
+    className="mx-auto mb-2"
+  />
+  <p className="font-semibold">Easy returns & exchanges</p>
+  <p className="text-sm">30-day returns & free exchanges.</p>
+</div>
+
+      </div>
+      
     <footer className="bg-[#1a1a1a] text-white px-6 md:px-20 pt-16 pb-10">
 
       <div className="grid md:grid-cols-4 gap-10 mt-12">

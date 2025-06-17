@@ -23,7 +23,7 @@ function AD2() {
               </h6>
             </div>
           </div>
-          <img src={bg} alt="ad" className="w-full h-full object-cover" />
+          <img src={bg} alt="ad" className="w-full h-full object-cover " />
         </div>
 
       </>   

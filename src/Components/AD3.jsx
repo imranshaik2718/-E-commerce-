@@ -9,10 +9,10 @@ function AD3() {
   return (
     <div>
       
-      <div className="container flex justify-between  items-center md:items-start self-start md:self-center text-center md:text-left md:p-3 font-sans"></div>
-      <div className="flex w-full h-[400px]">
+       
+      <div className="flex w-full h-[400px] py-3 bg-[#1a1a1a] not-first: ">
         <div className="w-[25%]">
-          <img src={img2} alt="ad" className="w-full h-full object-cover" />
+          <img src={img2} alt="ad" className="w-full h-full object-cover rounded-bl-[90px] rounded-tl-[90px]" />
         </div>
         <div className="w-[50%] relative">
           <div className="absolute inset-0 left-1/24 text-center">
@@ -26,7 +26,7 @@ function AD3() {
 
         <div className="w-[25%]">
           {" "}
-          <img src={img3} alt="ad" className="w-full h-full object-cover" />
+          <img src={img3} alt="ad" className="w-full h-full object-cover rounded-br-[90px] rounded-tr-[90px]" />
         </div>
       </div>
     </div>

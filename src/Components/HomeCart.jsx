@@ -23,19 +23,19 @@ const HomeCart = () => {
         <div className="space-x-3">
           <button
             onClick={() => setIsBestSeller(false)}
-            className={`px-4 py-2 rounded-full ${!isBestSeller ? 'bg-black text-white' : 'border border-black'}`}
+            className={`px-4 py-2 rounded-full shadow-xs shadow-black ${!isBestSeller ? 'bg-black text-white' : 'border border-black'}`}
           >
             New in
           </button>
           <button
             onClick={() => setIsBestSeller(true)}
-            className={`px-4 py-2 rounded-full ${isBestSeller ? 'bg-black text-white' : 'border border-black'}`}
+            className={`px-4 py-2 rounded-full shadow-xs shadow-black ${isBestSeller ? 'bg-black text-white' : 'border border-black'}`}
           >
             Best Sellers
           </button>
         </div>
         <Link to="/footwear">
-          <button className="border border-black px-4 py-2 rounded-full hover:bg-black/10">View All</button>
+          <button className="border border-black px-4 py-2 rounded-full shadow-xs shadow-black hover:bg-black/10">View All</button>
         </Link>
       </div>
 

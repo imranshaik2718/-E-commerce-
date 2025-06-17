@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function Nav() {
+  const [showInput, setShowInput] = useState(false);
   return (
     <div>
       <nav
@@ -75,11 +76,33 @@ fill="black" stroke="black">
 
         {/* Icons */}
         <div className="flex space-x-4">
-          <Link to="/search" className="hover:opacity-75"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" id="Search--Streamline-Tabler" height="24" width="24">
+          <input
+  type="text"
+  placeholder="Search"
+  className={`transition-all duration-500 border-b outline-none placeholder-gray-400 bg-transparent 
+    ${showInput ? 'w-48 opacity-100 px-2' : 'w-0 opacity-0 px-0'} 
+    `}
+/>
 
-  <path d="M3 10a7 7 0 1 0 14 0 7 7 0 1 0 -14 0" stroke-width="2"></path>
-  <path d="m21 21 -6 -6" stroke-width="2"></path>
-</svg></Link>
+
+       
+      <button onClick={() => setShowInput(!showInput)} className="ml-2 cursor-pointer">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+           
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          height="24"
+          width="24"
+        >
+          <path d="M3 10a7 7 0 1 0 14 0 7 7 0 1 0 -14 0" />
+          <path d="m21 21 -6 -6" />
+        </svg>
+      </button>
           <Link to="/checkout" className="hover:opacity-75"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"  stroke="#000000" stroke-linecap="round" stroke-linejoin="round" id="Shopping-Bag-Edit--Streamline-Tabler" height="24" width="24">
  
   <path d="M11 21H8.574a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152A2 2 0 0 1 6.331 8H17.67a2 2 0 0 1 1.977 2.304l-0.109 0.707" stroke-width="2"></path>

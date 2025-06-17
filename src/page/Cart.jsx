@@ -29,7 +29,7 @@ const CheckoutPage = () => {
           <p className="text-gray-600">No products in your Cart yet.</p>
         ) : (
           items.map((item, index) => (
-            <div key={index} className="flex items-center gap-6 border-b w-[900px] py-4 relative">
+            <div key={index} className="flex items-center gap-6 border-b w-[900px] py-4 relative pb-10">
               <img src={item.image} alt={item.name} className="w-24 h-24 object-contain" />
               <div>
                 <h3 className="text-lg font-medium">{item.name}</h3>
@@ -50,12 +50,12 @@ const CheckoutPage = () => {
 
       {items.length > 0 && (
         <div className="bg-[#f8f8f8] border-b p-6">
-          <div className="max-w-4xl mx-auto flex justify-between items-center">
+          <div className="max-w-4xl mx-auto flex justify-between items-center py-10">
             <div>
               <p className="text-xl font-semibold">Total: ₹{totalPrice.toLocaleString()}</p>
               <p className="text-sm text-gray-500">Includes all items in your cart</p>
             </div>
-            <button className="bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition">
+            <button className="bg-black text-white px-6 py-3 rounded-4xl hover:bg-gray-800 transition">
               Proceed to Checkout
             </button>
           </div>

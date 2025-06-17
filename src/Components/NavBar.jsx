@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showInput, setShowInput] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,7 +17,7 @@ function NavBar() {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all  duration-300 ease-in-out ${
-        isScrolled ? 'bg-white shadow-md ' : 'bg-transparent'
+        isScrolled ? 'bg-white shadow-md  ' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 ">
@@ -27,7 +28,7 @@ function NavBar() {
  preserveAspectRatio="xMidYMid meet">
 
 <g transform="translate(0.000000,1024.000000) scale(0.100000,-0.100000)"
-fill="white" stroke="black" className={` ${isScrolled ? 'fill-black' : 'fill-white'}`}>
+fill="white" stroke="black" className={` ${isScrolled ? 'fill-black ' : 'fill-white'}`}>
 <path d="M4145 7415 c-22 -8 -54 -30 -71 -50 -34 -38 -46 -77 -63 -198 -33
 -238 -209 -413 -491 -489 -69 -18 -111 -22 -225 -22 -239 0 -342 41 -538 218
 -70 64 -141 123 -157 131 -71 37 -184 8 -235 -59 -33 -44 -40 -88 -26 -173 14
@@ -87,11 +88,36 @@ fill="white" stroke="black" className={` ${isScrolled ? 'fill-black' : 'fill-whi
 
         {/* Icons */}
         <div className="flex space-x-4">
-          <Link to="/search" className="hover:opacity-75"><svg xmlns="http://www.w3.org/2000/svg" className={` ${isScrolled ? 'stroke-black' : 'stroke-white'}`} viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" id="Search--Streamline-Tabler" height="24" width="24">
+           <div className="flex items-center relative">
+       
+     <input
+  type="text"
+  placeholder="Search"
+  className={`transition-all duration-500 border-b outline-none placeholder-gray-400 bg-transparent 
+    ${showInput ? 'w-48 opacity-100 px-2' : 'w-0 opacity-0 px-0'} 
+    ${isScrolled ? 'text-black' : 'text-white'}`}
+/>
 
-  <path d="M3 10a7 7 0 1 0 14 0 7 7 0 1 0 -14 0" stroke-width="2"></path>
-  <path d="m21 21 -6 -6" stroke-width="2"></path>
-</svg></Link>
+
+       
+      <button onClick={() => setShowInput(!showInput)} className="ml-2 cursor-pointer">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={` ${isScrolled ? 'stroke-black' : 'stroke-white'}`}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          height="24"
+          width="24"
+        >
+          <path d="M3 10a7 7 0 1 0 14 0 7 7 0 1 0 -14 0" />
+          <path d="m21 21 -6 -6" />
+        </svg>
+      </button>
+    </div>
           <Link to="/checkout" className="hover:opacity-75"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" className={` ${isScrolled ? 'stroke-black' : 'stroke-white'}`} stroke="#000000" stroke-linecap="round" stroke-linejoin="round" id="Shopping-Bag-Edit--Streamline-Tabler" height="24" width="24">
  
   <path d="M11 21H8.574a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152A2 2 0 0 1 6.331 8H17.67a2 2 0 0 1 1.977 2.304l-0.109 0.707" stroke-width="2"></path>
