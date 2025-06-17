@@ -5,7 +5,7 @@ import Nav from "../HomePage/Nav";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
 import { removeFromLikedItems } from "../redux/cartSlice";
-import { FaTrash } from "react-icons/fa"; // install with `npm i react-icons`
+import { FaTrash } from "react-icons/fa";  
 
 function Collections() {
   const dispatch = useDispatch();
