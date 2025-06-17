@@ -1,7 +1,5 @@
-// cartSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
-// Load saved state from localStorage
 const storedCart = localStorage.getItem("cartItems");
 const storedLikes = localStorage.getItem("likedItems");
 
@@ -17,7 +15,6 @@ const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       state.items.push(action.payload);
-      // Save cart to localStorage
       localStorage.setItem("cartItems", JSON.stringify(state.items));
     },
     toggleLike: (state, action) => {
@@ -28,11 +25,26 @@ const cartSlice = createSlice({
       } else {
         state.likedItems.splice(index, 1);
       }
-      // Save liked items to localStorage
+      localStorage.setItem("likedItems", JSON.stringify(state.likedItems));
+    },
+    removeFromCart: (state, action) => {
+      const itemId = action.payload;
+      state.items = state.items.filter((_, index) => index !== itemId);
+      localStorage.setItem("cartItems", JSON.stringify(state.items));
+    },
+    removeFromLikedItems: (state, action) => {
+      const itemId = action.payload;
+      state.likedItems = state.likedItems.filter(id => id !== itemId);
       localStorage.setItem("likedItems", JSON.stringify(state.likedItems));
     },
   },
 });
 
-export const { addToCart, toggleLike } = cartSlice.actions;
+export const {
+  addToCart,
+  toggleLike,
+  removeFromCart,
+  removeFromLikedItems
+} = cartSlice.actions;
+
 export default cartSlice.reducer;

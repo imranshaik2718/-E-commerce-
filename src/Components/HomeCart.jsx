@@ -1,29 +1,42 @@
-// src/components/HomeCart.jsx
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import homeProducts from '../Data/homeProducts';
 
 const HomeCart = () => {
   const scrollRef = useRef(null);
+  const [isBestSeller, setIsBestSeller] = useState(false); // 🔁 Toggle sort
 
   const scroll = (direction) => {
     const scrollAmount = direction === 'left' ? -400 : 400;
     scrollRef.current?.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   };
 
+  // 🔄 Get products based on sort mode
+  const displayedProducts = isBestSeller
+    ? [...homeProducts].reverse()
+    : homeProducts;
+
   return (
     <div className="w-full relative px-6 py-10 bg-white">
       <div className="flex mb-6 justify-between">
-        <div>
-          <button className="bg-black text-white px-4 py-2 rounded-full">New in</button>
-          <button className="border border-black px-4 py-2 mx-5 rounded-full">Best Sellers</button>
+        <div className="space-x-3">
+          <button
+            onClick={() => setIsBestSeller(false)}
+            className={`px-4 py-2 rounded-full ${!isBestSeller ? 'bg-black text-white' : 'border border-black'}`}
+          >
+            New in
+          </button>
+          <button
+            onClick={() => setIsBestSeller(true)}
+            className={`px-4 py-2 rounded-full ${isBestSeller ? 'bg-black text-white' : 'border border-black'}`}
+          >
+            Best Sellers
+          </button>
         </div>
-        <div>
-          <Link to="/footwear">
-            <button className="border border-black px-4 py-2 rounded-full hover:bg-black/10">View All</button>
-          </Link>
-        </div>
+        <Link to="/footwear">
+          <button className="border border-black px-4 py-2 rounded-full hover:bg-black/10">View All</button>
+        </Link>
       </div>
 
       <div className="relative bg-white">
@@ -38,7 +51,7 @@ const HomeCart = () => {
           ref={scrollRef}
           className="flex overflow-x-auto scroll-smooth space-x-6 pb-2 no-scrollbar"
         >
-          {homeProducts.map((product) => (
+          {displayedProducts.map((product) => (
             <Link
               to={`/homeProduct/${product.id}`}
               key={product.id}
