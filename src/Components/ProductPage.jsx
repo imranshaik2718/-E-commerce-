@@ -133,10 +133,7 @@ const handleAddToCart = () => {
   disabled={!selectedSize}
 >
   {selectedSize ? 'Add to Cart' : 'Select your size'}
-</button>
-
-
-
+</button> 
           {/* Shipping info */}
           <div className="mt-4 text-sm text-gray-600">
             <p>

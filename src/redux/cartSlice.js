@@ -14,9 +14,43 @@ const cartSlice = createSlice({
   },
   reducers: {
     addToCart: (state, action) => {
-      state.items.push(action.payload);
+      const { id, size } = action.payload;
+
+      // Check for same item (by id and size)
+      const existingItem = state.items.find(
+        (item) => item.id === id && item.size === size
+      );
+
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        state.items.push({ ...action.payload, quantity: 1 });
+      }
+
       localStorage.setItem("cartItems", JSON.stringify(state.items));
     },
+
+    removeFromCart: (state, action) => {
+      state.items = state.items.filter((_, index) => index !== action.payload);
+      localStorage.setItem("cartItems", JSON.stringify(state.items));
+    },
+
+    increaseQuantity: (state, action) => {
+      const item = state.items[action.payload];
+      if (item) {
+        item.quantity += 1;
+        localStorage.setItem("cartItems", JSON.stringify(state.items));
+      }
+    },
+
+    decreaseQuantity: (state, action) => {
+      const item = state.items[action.payload];
+      if (item && item.quantity > 1) {
+        item.quantity -= 1;
+        localStorage.setItem("cartItems", JSON.stringify(state.items));
+      }
+    },
+
     toggleLike: (state, action) => {
       const itemId = action.payload;
       const index = state.likedItems.findIndex(item => item === itemId);
@@ -27,11 +61,7 @@ const cartSlice = createSlice({
       }
       localStorage.setItem("likedItems", JSON.stringify(state.likedItems));
     },
-    removeFromCart: (state, action) => {
-      const itemId = action.payload;
-      state.items = state.items.filter((_, index) => index !== itemId);
-      localStorage.setItem("cartItems", JSON.stringify(state.items));
-    },
+
     removeFromLikedItems: (state, action) => {
       const itemId = action.payload;
       state.likedItems = state.likedItems.filter(id => id !== itemId);
@@ -42,8 +72,10 @@ const cartSlice = createSlice({
 
 export const {
   addToCart,
-  toggleLike,
   removeFromCart,
+  increaseQuantity,
+  decreaseQuantity,
+  toggleLike,
   removeFromLikedItems
 } = cartSlice.actions;
 
