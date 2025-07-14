@@ -9,8 +9,7 @@ import SNEAKERS from '../Components/SNEAKERS'
 import BagCart from '../Components/BagCart'
 import Footer from '../Components/Footer'
 import AD3 from '../Components/AD3'
-import AD4 from '../Components/AD4'
-
+import AD4 from '../Components/AD4' 
 
 function HomePage() {
    
@@ -26,6 +25,7 @@ function HomePage() {
       <AD4/>
       <AD3/>
       <Footer/>
+       
     </div>
   )
 }

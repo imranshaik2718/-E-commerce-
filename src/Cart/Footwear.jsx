@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
  import { FaHeart } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
-import { toggleLike } from "../redux/cartSlice"; // adjust path if needed
+import { toggleLike } from "../redux/cartSlice";  
 
 
 function Footwear() {

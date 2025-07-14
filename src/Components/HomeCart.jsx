@@ -35,7 +35,7 @@ const HomeCart = () => {
           </button>
         </div>
         <Link to="/footwear">
-          <button className="border border-black px-4 py-2 rounded-full shadow-xs shadow-black hover:bg-black/10">View All</button>
+          <button className="border cursor-pointer border-black px-4 py-2 rounded-full shadow-xs shadow-black hover:bg-black/10">View All</button>
         </Link>
       </div>
 

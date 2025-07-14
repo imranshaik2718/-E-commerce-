@@ -2,6 +2,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import bags from "../Data/Bag";
+import { Link } from 'react-router-dom'
+ 
 
 const BagCart = () => {
   const scrollRef = useRef(null);
@@ -28,7 +30,7 @@ const BagCart = () => {
         <h1 className='hover:underline  '>A New Era of Packing</h1>
         <div>
             
-            <button className="border border-black px-4 py-2 rounded-full hover:bg-black/20 shadow-xs shadow-black">View All</button>
+           <Link to="/Bag"> <button className="border cursor-pointer border-black px-4 py-2 rounded-full hover:bg-black/20 shadow-xs shadow-black">View All</button></Link>
         </div>
       </div>
 
@@ -53,6 +55,7 @@ const BagCart = () => {
                   alt={bag.name}
                   className="w-full h-100 object-contain bg-[#f8f8fa]   duration-500"
                 />
+                 
               </div>
               <div className="mt-2 text-sm">
                 <p className="font-semibold">{bag.name}</p>

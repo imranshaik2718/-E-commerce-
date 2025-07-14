@@ -1,24 +1,38 @@
 import React from 'react';
 import bags from "../Data/AllBags";
 import Nav from '../HomePage/Nav';
-
+ import bagHero from "../assets/Hero/backpackvideo.mp4";
+ import bagHero2 from "../assets/Hero/bagpackbg.mp4";
 const BagPack = () => {
+  
   return (
     <div>
         <Nav/>
-    <div className="w-full px-6 py-10 mt-10">
-      
-       
-
+    <div className=" not-last:    ">
+      <div className="flex items-center justify-center bg-white">
+       <div className='overflow-hidden w-[840px] h-[448px]   bg-white text-center '>
+      <video
+         
+        className="bg-white object-cover  w-full h-full   "
+        autoPlay
+        muted
+         loop
+      >
+        <source src={bagHero2} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+       </div>
+</div>
       {/* Grid Layout for Bags */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
+      <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
         {bags.map((bag) => (
-          <div key={bag.id} className=" rounded-lg overflow-hidden     transition duration-300">
+          <div key={bag.id} className=" rounded-lg overflow-hidden   pt-10  transition duration-300">
             <img
               src={bag.image}
               alt={bag.name}
               className="w-full h-64 object-contain   duration-500"
             />
+             
             <div className="p-4 text-sm">
               <p className="font-semibold">{bag.name}</p>
               <p className="text-gray-600">{bag.color}</p>
