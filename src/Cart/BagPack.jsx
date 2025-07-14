@@ -3,6 +3,7 @@ import bags from "../Data/AllBags";
 import Nav from '../HomePage/Nav';
  import bagHero from "../assets/Hero/backpackvideo.mp4";
  import bagHero2 from "../assets/Hero/bagpackbg.mp4";
+import Footer from '../Components/Footer';
 const BagPack = () => {
   
   return (
@@ -42,6 +43,7 @@ const BagPack = () => {
         ))}
       </div>
     </div>
+    <Footer/>
     </div>
   );
 };
